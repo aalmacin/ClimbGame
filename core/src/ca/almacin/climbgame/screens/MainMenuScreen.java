@@ -1,7 +1,6 @@
 package ca.almacin.climbgame.screens;
 
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 
 import ca.almacin.climbgame.ClimbGame;
@@ -9,9 +8,9 @@ import ca.almacin.climbgame.ClimbGame;
 /**
  * Created by AldrinJerome on 2016-02-07.
  */
-public class Main extends ScreenWithBackground {
-    public Main(ClimbGame game) {
-        super(game, new Texture(Gdx.files.internal("badlogic.jpg")));
+public class MainMenuScreen extends ClimbScreen {
+    public MainMenuScreen(ClimbGame game) {
+        super(game, new Texture(Gdx.files.internal("cliff.png")));
     }
 
     @Override

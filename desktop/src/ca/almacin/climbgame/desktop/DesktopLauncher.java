@@ -7,8 +7,9 @@ import ca.almacin.climbgame.ClimbGame;
 public class DesktopLauncher {
 	public static void main (String[] arg) {
 		LwjglApplicationConfiguration config = new LwjglApplicationConfiguration();
-		config.height = 800;
-		config.width = 480;
+		config.width = ClimbGame.SCREEN_WIDTH;
+		config.height = ClimbGame.SCREEN_HEIGHT;
+		config.title = ClimbGame.TITLE;
 		new LwjglApplication(new ClimbGame(), config);
 	}
 }

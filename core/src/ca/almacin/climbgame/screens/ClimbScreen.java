@@ -11,11 +11,11 @@ import ca.almacin.climbgame.ClimbGame;
 /**
  * Created by AldrinJerome on 2016-02-08.
  */
-public class ScreenWithBackground implements Screen {
+public abstract class ClimbScreen implements Screen {
     protected ClimbGame game;
     protected Texture background;
 
-    public ScreenWithBackground(ClimbGame game, Texture background) {
+    public ClimbScreen(ClimbGame game, Texture background) {
         this.game = game;
         this.background = background;
     }

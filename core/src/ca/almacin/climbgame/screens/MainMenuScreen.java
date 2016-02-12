@@ -31,7 +31,7 @@ public class MainMenuScreen extends ClimbScreen {
     private TextureAtlas.AtlasRegion optionsButton;
 
     public MainMenuScreen(ClimbGame game) {
-        super(game, new Texture(Gdx.files.internal("cliff.png")));
+        super(game, new Texture(Gdx.files.internal("dragon.jpg")));
 
         this.textureAtlas = new TextureAtlas(Gdx.files.internal("MainMenu.pack"));
 

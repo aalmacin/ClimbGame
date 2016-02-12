@@ -36,11 +36,11 @@ public class MainMenuScreen extends ClimbScreen {
         this.textureAtlas = new TextureAtlas(Gdx.files.internal("MainMenu.pack"));
 
 
-        playButtonUp = this.textureAtlas.findRegion("playbuttonup");
-        playButtonDown = this.textureAtlas.findRegion("playbutton");
+        playButtonUp = this.textureAtlas.findRegion("Play");
+        playButtonDown = this.textureAtlas.findRegion("PlayDown");
 
-        optionsButtonUp = this.textureAtlas.findRegion("optionsbuttonup");
-        optionsButtonDown = this.textureAtlas.findRegion("optionsbutton");
+        optionsButtonUp = this.textureAtlas.findRegion("Options");
+        optionsButtonDown = this.textureAtlas.findRegion("OptionsDown");
 
         this.playButton = this.playButtonUp;
         this.optionsButton = this.optionsButtonUp;
@@ -124,7 +124,7 @@ public class MainMenuScreen extends ClimbScreen {
     @Override
     public boolean touchUp(int screenX, int screenY, int pointer, int button) {
         screenY = Math.abs(ClimbGame.SCREEN_HEIGHT - screenY);
-        
+
         this.playButton = this.playButtonUp;
         this.optionsButton = this.optionsButtonUp;
 

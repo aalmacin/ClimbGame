@@ -3,30 +3,44 @@ MainMenu.png
 format: RGBA8888
 filter: Nearest,Nearest
 repeat: none
-optionsbutton
+Exit
+  rotate: false
+  xy: 1, 211
+  size: 100, 40
+  orig: 100, 40
+  offset: 0, 0
+  index: -1
+ExitDown
+  rotate: false
+  xy: 1, 169
+  size: 100, 40
+  orig: 100, 40
+  offset: 0, 0
+  index: -1
+Options
+  rotate: false
+  xy: 1, 127
+  size: 100, 40
+  orig: 100, 40
+  offset: 0, 0
+  index: -1
+OptionsDown
+  rotate: false
+  xy: 1, 85
+  size: 100, 40
+  orig: 100, 40
+  offset: 0, 0
+  index: -1
+Play
+  rotate: false
+  xy: 1, 43
+  size: 100, 40
+  orig: 100, 40
+  offset: 0, 0
+  index: -1
+PlayDown
   rotate: false
   xy: 1, 1
-  size: 100, 40
-  orig: 100, 40
-  offset: 0, 0
-  index: -1
-optionsbuttonup
-  rotate: false
-  xy: 103, 1
-  size: 100, 40
-  orig: 100, 40
-  offset: 0, 0
-  index: -1
-playbutton
-  rotate: false
-  xy: 205, 1
-  size: 100, 40
-  orig: 100, 40
-  offset: 0, 0
-  index: -1
-playbuttonup
-  rotate: false
-  xy: 307, 1
   size: 100, 40
   orig: 100, 40
   offset: 0, 0

@@ -5,6 +5,7 @@ import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.badlogic.gdx.math.Vector3;
 
 import aurelienribon.tweenengine.TweenAccessor;
 import ca.almacin.climbgame.ClimbGame;
@@ -13,7 +14,7 @@ import ca.almacin.climbgame.ClimbGame;
  * Created by AldrinJerome on 2016-02-12.
  */
 public class Player extends Sprite {
-    public static final int PLAYER_POSITION_Y = ClimbGame.SCREEN_HEIGHT / 2 - 300;
+    public static final int PLAYER_POSITION_Y = ClimbGame.SCREEN_HEIGHT / 2 - 400;
 
     public static final int LEFTMOST = -2;
     public static final int CENTRE = 0;
@@ -71,4 +72,6 @@ public class Player extends Sprite {
     public float getNewX() {
         return newX;
     }
+
+
 }

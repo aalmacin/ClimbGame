@@ -1,7 +1,10 @@
 package ca.almacin.climbgame.screens;
 
+import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.badlogic.gdx.utils.viewport.FillViewport;
+import com.badlogic.gdx.utils.viewport.FitViewport;
 
 import aurelienribon.tweenengine.Timeline;
 import aurelienribon.tweenengine.Tween;
@@ -10,6 +13,7 @@ import aurelienribon.tweenengine.TweenManager;
 import ca.almacin.climbgame.ClimbGame;
 import ca.almacin.climbgame.sprites.Player;
 import ca.almacin.climbgame.tween.PlayerAccessor;
+
 
 /**
  * Created by AldrinJerome on 2016-02-12.
@@ -27,6 +31,8 @@ public class PlayScreen extends ClimbScreen {
     private final TweenManager tweenManager;
     private final TextureAtlas.AtlasRegion jumpLeftTexture;
     private final TextureAtlas.AtlasRegion jumpRightTexture;
+    private final OrthographicCamera orthographicCamera;
+    private final FillViewport viewport;
     private TextureRegion playerTexture;
     private float touchX;
     private float touchY;
@@ -36,6 +42,18 @@ public class PlayScreen extends ClimbScreen {
         super(game, "Background", "Play.pack");
         this.player = new Player();
         this.tweenManager = new TweenManager();
+
+        this.orthographicCamera = new OrthographicCamera();
+        this.orthographicCamera.setToOrtho(false, ClimbGame.SCREEN_WIDTH, ClimbGame.SCREEN_HEIGHT /2 );
+
+        this.viewport = new FillViewport(ClimbGame.SCREEN_WIDTH, ClimbGame.SCREEN_HEIGHT);
+        this.viewport.setScreenPosition(ClimbGame.SCREEN_WIDTH / 2, (ClimbGame.SCREEN_HEIGHT / 4));
+
+        System.out.println("LOC : " + ((ClimbGame.SCREEN_HEIGHT / 2) - 200));
+
+        this.orthographicCamera.position.set(this.viewport.getScreenX(), this.viewport.getScreenY(), 0);
+        this.viewport.setCamera(this.orthographicCamera);
+
 
         this.jumpLeftTexture = textureAtlas.findRegion("JumpLeft");
         this.jumpRightTexture = textureAtlas.findRegion("JumpRight");
@@ -47,8 +65,15 @@ public class PlayScreen extends ClimbScreen {
     public void render(float delta) {
         super.render(delta);
         this.tweenManager.update(delta);
+
+        this.orthographicCamera.update();
+
+
+        this.game.getBatch().setProjectionMatrix(this.orthographicCamera.combined);
+
         this.game.getBatch().begin();
         this.game.getBatch().draw(this.background, 0, 0);
+
 
         if(tweenManager.getRunningTweensCount() > 0) {
             if(movement == JUMP_LEFT)

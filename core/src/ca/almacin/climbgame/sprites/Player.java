@@ -57,6 +57,10 @@ public class Player extends Sprite {
         this.move();
     }
 
+    public float getCurrentPos() {
+        return currentPos;
+    }
+
     private void move() {
         this.newX = this.PLAYER_INITIAL_X + (this.currentPos * this.CLIMB_MAN_WIDTH);
     }

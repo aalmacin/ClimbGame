@@ -1,7 +1,6 @@
 package ca.almacin.climbgame.screens;
 
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.math.Rectangle;
 
@@ -12,8 +11,6 @@ import ca.almacin.climbgame.ClimbGame;
  */
 public class MainMenuScreen extends ClimbScreen {
     private static final int BUTTON_VERTICAL_SPACE = 10;
-
-    private final TextureAtlas textureAtlas;
 
     private final TextureAtlas.AtlasRegion playButtonUp;
     private final TextureAtlas.AtlasRegion playButtonDown;
@@ -31,10 +28,7 @@ public class MainMenuScreen extends ClimbScreen {
     private TextureAtlas.AtlasRegion optionsButton;
 
     public MainMenuScreen(ClimbGame game) {
-        super(game, new Texture(Gdx.files.internal("dragon.jpg")));
-
-        this.textureAtlas = new TextureAtlas(Gdx.files.internal("MainMenu.pack"));
-
+        super(game, "Background", "MainMenu.pack");
 
         playButtonUp = this.textureAtlas.findRegion("Play");
         playButtonDown = this.textureAtlas.findRegion("PlayDown");

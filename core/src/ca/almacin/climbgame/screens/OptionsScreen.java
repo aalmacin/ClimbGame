@@ -10,7 +10,7 @@ import ca.almacin.climbgame.ClimbGame;
  */
 public class OptionsScreen extends ClimbScreen {
     public OptionsScreen(ClimbGame game) {
-        super(game, new Texture("cliff.png"));
+        super(game, "Background", "MainMenu.pack");
     }
 
     @Override

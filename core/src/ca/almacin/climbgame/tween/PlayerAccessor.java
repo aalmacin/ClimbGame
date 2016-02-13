@@ -15,7 +15,6 @@ public class PlayerAccessor implements TweenAccessor<Player> {
         switch(tweenType) {
             case MOVEX:
                 returnValues[0] = target.getX();
-                System.out.println("Return : " + returnValues[0]);
                 return 1;
             case JUMP:
                 returnValues[0] = target.getY();
@@ -31,7 +30,6 @@ public class PlayerAccessor implements TweenAccessor<Player> {
         switch(tweenType) {
             case MOVEX:
                 target.setX(newValues[0]);
-                System.out.println("New : " + newValues[0]);
                 break;
             case JUMP:
                 target.setY(newValues[0]);

@@ -4,9 +4,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.InputProcessor;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL20;
-import com.badlogic.gdx.graphics.OrthographicCamera;
-import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.scenes.scene2d.ui.Skin;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 
 import ca.almacin.climbgame.ClimbGame;
 
@@ -15,11 +13,17 @@ import ca.almacin.climbgame.ClimbGame;
  */
 public abstract class ClimbScreen implements Screen, InputProcessor {
     protected ClimbGame game;
-    protected Texture background;
+    protected TextureAtlas.AtlasRegion background;
 
-    public ClimbScreen(ClimbGame game, Texture background) {
+    protected final TextureAtlas textureAtlas;
+
+    public ClimbScreen(ClimbGame game, String background, String atlas) {
         this.game = game;
-        this.background = background;
+
+        this.textureAtlas = new TextureAtlas(Gdx.files.internal(atlas));
+
+        this.background = textureAtlas.findRegion(background);
+
         Gdx.input.setInputProcessor(this);
     }
 

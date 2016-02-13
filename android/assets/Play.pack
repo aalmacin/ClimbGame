@@ -10,16 +10,30 @@ Background
   orig: 480, 800
   offset: 0, 0
   index: -1
-JumpLeft
+JumpDown
   rotate: false
   xy: 1, 1
   size: 80, 150
   orig: 80, 150
   offset: 0, 0
   index: -1
-JumpRight
+JumpLeft
   rotate: false
   xy: 83, 1
+  size: 80, 150
+  orig: 80, 150
+  offset: 0, 0
+  index: -1
+JumpRight
+  rotate: false
+  xy: 165, 1
+  size: 80, 150
+  orig: 80, 150
+  offset: 0, 0
+  index: -1
+JumpUp
+  rotate: false
+  xy: 247, 1
   size: 80, 150
   orig: 80, 150
   offset: 0, 0

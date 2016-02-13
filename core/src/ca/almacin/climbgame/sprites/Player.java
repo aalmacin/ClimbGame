@@ -13,6 +13,8 @@ import ca.almacin.climbgame.ClimbGame;
  * Created by AldrinJerome on 2016-02-12.
  */
 public class Player extends Sprite {
+    public static final int PLAYER_POSITION_Y = ClimbGame.SCREEN_HEIGHT / 2 - 300;
+
     public static final int LEFTMOST = -2;
     public static final int CENTRE = 0;
     public static final int RIGHTMOST = 2;
@@ -38,6 +40,7 @@ public class Player extends Sprite {
         currentPos = CENTRE;
         this.move();
         this.setX(this.newX);
+        this.setY(PLAYER_POSITION_Y);
     }
 
     public TextureRegion getCurrentFrame(float delta) {

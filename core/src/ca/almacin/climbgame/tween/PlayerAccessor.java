@@ -7,13 +7,13 @@ import ca.almacin.climbgame.sprites.Player;
  * Created by AldrinJerome on 2016-02-12.
  */
 public class PlayerAccessor implements TweenAccessor<Player> {
-    public static final int MOVEX = 0;
+    public static final int MOVE_X = 0;
     public static final int JUMP = 1;
 
     @Override
     public int getValues(Player target, int tweenType, float[] returnValues) {
         switch(tweenType) {
-            case MOVEX:
+            case MOVE_X:
                 returnValues[0] = target.getX();
                 return 1;
             case JUMP:
@@ -28,7 +28,7 @@ public class PlayerAccessor implements TweenAccessor<Player> {
     @Override
     public void setValues(Player target, int tweenType, float[] newValues) {
         switch(tweenType) {
-            case MOVEX:
+            case MOVE_X:
                 target.setX(newValues[0]);
                 break;
             case JUMP:

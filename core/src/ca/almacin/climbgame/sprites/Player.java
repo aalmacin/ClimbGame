@@ -6,6 +6,7 @@ import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 
+import aurelienribon.tweenengine.TweenAccessor;
 import ca.almacin.climbgame.ClimbGame;
 
 /**
@@ -23,8 +24,10 @@ public class Player extends Sprite {
 
     private int currentPos;
     private float stateTime;
+    private float newX;
 
     public Player() {
+
         textureAtlas = new TextureAtlas(Gdx.files.internal("Climb.pack"));
         animation = new Animation(0.5f, textureAtlas.getRegions());
 
@@ -34,6 +37,7 @@ public class Player extends Sprite {
         stateTime = 0.0f;
         currentPos = CENTRE;
         this.move();
+        this.setX(this.newX);
     }
 
     public TextureRegion getCurrentFrame(float delta) {
@@ -52,8 +56,12 @@ public class Player extends Sprite {
         if(currentPos > RIGHTMOST ) currentPos = RIGHTMOST;
         this.move();
     }
-    
+
     private void move() {
-        this.setX(this.PLAYER_INITIAL_X + (this.currentPos * this.CLIMB_MAN_WIDTH));
+        this.newX = this.PLAYER_INITIAL_X + (this.currentPos * this.CLIMB_MAN_WIDTH);
+    }
+
+    public float getNewX() {
+        return newX;
     }
 }

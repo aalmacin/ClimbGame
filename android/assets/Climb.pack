@@ -6,21 +6,21 @@ repeat: none
 Climb-1
   rotate: false
   xy: 1, 1
-  size: 80, 150
-  orig: 80, 150
+  size: 40, 75
+  orig: 40, 75
   offset: 0, 0
   index: -1
 Climb-2
   rotate: false
-  xy: 83, 1
-  size: 80, 150
-  orig: 80, 150
+  xy: 43, 1
+  size: 40, 75
+  orig: 40, 75
   offset: 0, 0
   index: -1
 Climb-3
   rotate: false
-  xy: 165, 1
-  size: 80, 150
-  orig: 80, 150
+  xy: 85, 1
+  size: 40, 75
+  orig: 40, 75
   offset: 0, 0
   index: -1

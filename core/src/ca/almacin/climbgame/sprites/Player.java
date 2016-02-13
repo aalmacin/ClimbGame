@@ -14,7 +14,7 @@ import ca.almacin.climbgame.ClimbGame;
  * Created by AldrinJerome on 2016-02-12.
  */
 public class Player extends Sprite {
-    public static final int PLAYER_POSITION_Y = ClimbGame.SCREEN_HEIGHT / 2 - 400;
+    public static final int PLAYER_POSITION_Y = ClimbGame.SCREEN_HEIGHT / 2 - 300;
 
     public static final int LEFTMOST = -2;
     public static final int CENTRE = 0;
@@ -35,6 +35,8 @@ public class Player extends Sprite {
         animation = new Animation(0.5f, textureAtlas.getRegions());
 
         CLIMB_MAN_WIDTH = animation.getKeyFrame(0, true).getRegionWidth();
+
+        System.out.println("JJJ : " + CLIMB_MAN_WIDTH);
         PLAYER_INITIAL_X = (ClimbGame.SCREEN_WIDTH / 2) - (CLIMB_MAN_WIDTH / 2);
 
         stateTime = 0.0f;
@@ -66,7 +68,7 @@ public class Player extends Sprite {
     }
 
     private void move() {
-        this.newX = this.PLAYER_INITIAL_X + (this.currentPos * this.CLIMB_MAN_WIDTH);
+        this.newX = this.PLAYER_INITIAL_X + (this.currentPos * (ClimbGame.SCREEN_WIDTH / 5));
     }
 
     public float getNewX() {

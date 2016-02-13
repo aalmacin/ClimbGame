@@ -5,7 +5,9 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 import aurelienribon.tweenengine.Tween;
 import ca.almacin.climbgame.screens.MainMenuScreen;
+import ca.almacin.climbgame.sprites.Parallax;
 import ca.almacin.climbgame.sprites.Player;
+import ca.almacin.climbgame.tween.ParallaxAccessor;
 import ca.almacin.climbgame.tween.PlayerAccessor;
 
 public class ClimbGame extends Game {
@@ -25,6 +27,7 @@ public class ClimbGame extends Game {
 
 
 		Tween.registerAccessor(Player.class, new PlayerAccessor());
+		Tween.registerAccessor(Parallax.class, new ParallaxAccessor());
 	}
 
 	@Override

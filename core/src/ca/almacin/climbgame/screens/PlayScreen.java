@@ -65,7 +65,7 @@ public class PlayScreen extends ClimbScreen {
 
         Tween.set(this.parallax, ParallaxAccessor.MAIN).target(this.parallax.getY()).start(tweenManager);
 
-        Tween.to(this.parallax, ParallaxAccessor.MAIN, 3.0f).target(-(ClimbGame.SCREEN_HEIGHT / 2)).repeat(100, 0).start(tweenManager);
+        Tween.to(this.parallax, ParallaxAccessor.MAIN, 3.0f).target(-(ClimbGame.SCREEN_HEIGHT / 2)).repeat(-1, 0).start(tweenManager);
     }
 
     @Override
